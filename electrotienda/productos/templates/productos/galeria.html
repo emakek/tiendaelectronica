@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Galería de Productos</title>
+  <link rel="stylesheet" href="{% static 'productos/css/estilos.css' %}" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="#"><img src="{% static 'productos/img/ekdevs2.ico' %}" alt="Logo" /></a>
+      </div>
+      <button class="menu-toggle" id="menu-toggle">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#productos">Galería</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="productos">
+      <div class="titulo-centro">
+          <h1>Productos</h1>
+      </div>
+  <div class="galeria">
+    {% for producto in productos %}
+      <div class="tarjeta">
+        {% if producto.imagen %}
+          <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}" />
+        {% else %}
+          <p>Sin imagen</p>
+        {% endif %}
+        <h3>{{ producto.nombre }}</h3>
+        <p>{{ producto.descripcion }}</p>
+        <p><strong>${{ producto.precio }}</strong></p>
+      </div>
+    {% endfor %}
+  </div>
+
+ <section id="contacto" class="contacto">
+  <div class="contacto-contenedor">
+    <h2>Contacto</h2>
+    <form action="#" method="post">
+      {% csrf_token %}
+      <div class="campo">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" required>
+      </div>
+      <div class="campo">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="campo">
+         <label for="mensaje">Mensaje</label>
+         <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+       </div>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+</body>
+</html>
