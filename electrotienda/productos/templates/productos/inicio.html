@@ -1,0 +1,221 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Inicio</title>
+  <link rel="stylesheet" href="{% static 'productos/css/estilos.css' %}">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="#"><img src="{% static 'productos/img/ekdevs2.ico' %}" alt="Logo" style="height: 40px;"></a>
+      </div>
+      <button class="menu-toggle" id="menu-toggle">☰</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="{% url 'inicio' %}">Inicio</a></li>
+        <li><a href="{% url 'galeria' %}">Galería</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="bienvenida">
+      <h1>Bienvenido a Electrotienda</h1>
+      <p>Tu sitio de confianza para productos electrónicos y servicios técnicos.</p>
+    </section>
+
+       <section id="blog">
+            <div class="background">
+                <div class="centering">
+                <div class="articles">
+                    <article>
+                        <figure>
+                            <img src="{% static 'productos/img/telefonointeligente7.jpg' %}" alt="Preview 1">
+                        </figure>
+                        <div class="article-preview">
+                            <h2>Sam A06</h2>
+                            <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent in mauris eu tortor porttitor accumsan.
+                            <a href="#" class="read-more" title="Read More">Read more</a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article>
+                        <figure>
+                            <img src="{% static 'productos/img/telefonointeligente2.jpg' %}" alt="Preview 2">
+                        </figure>
+                        <div class="article-preview">
+                            <h2>MOT0 G75</h2>
+                            <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent in mauris eu tortor porttitor accumsan.
+                            <a href="#" class="read-more" title="Read More">Read more</a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article>
+                        <figure>
+                            <img src="{% static 'productos/img/telefonointeligente3.jpg' %}" alt="Preview 3">
+                        </figure>
+                        <div class="article-preview">
+                            <h2>Note 14</h2>
+                            <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent in mauris eu tortor porttitor accumsan.
+                            <a href="#" class="read-more" title="Read More">Read more</a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article>
+                        <figure>
+                            <img src="{% static 'productos/img/telefonointeligente8.jpg' %}" alt="Preview 4">
+                        </figure>
+                        <div class="article-preview">
+                            <h2>Sam A56</h2>
+                            <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent in mauris eu tortor porttitor accumsan.
+                            <a href="#" class="read-more" title="Read More">Read more</a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article>
+                        <figure>
+                            <img src="{% static 'productos/img/telefonointeligente9.jpg' %}" alt="Preview 5">
+                        </figure>
+                        <div class="article-preview">
+                            <h2>Sam A16</h2>
+                            <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent in mauris eu tortor porttitor accumsan.
+                            <a href="#" class="read-more" title="Read More">Read more</a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <article>
+                        <figure>
+                            <img src="{% static 'productos/img/telefonointeligente6.jpg' %}" alt="Preview 6">
+                        </figure>
+                        <div class="article-preview">
+                            <h2>Sam A35</h2>
+                            <p>
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent in mauris eu tortor porttitor accumsan.
+                            <a href="#" class="read-more" title="Read More">Read more</a>
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Agregá más <article> como estos según necesites -->
+                </div>
+                </div>
+            </div>
+        </section>
+        <style>
+            /* Variables de color */
+:root {
+    --primary: #DD946F ;
+    --secondary: #896eeb;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--secondary);
+    font-family: Mulish;
+    font-size: 16px;
+}
+
+.background {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 2rem;
+}
+ 
+.articles {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    justify-content: center;
+    max-width: 75rem;
+    gap: 1.5rem;
+}
+ 
+.articles article {
+    max-width: 20rem;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+
+.articles article a {
+    display: inline-flex;
+    color: blue;
+    text-decoration: none;
+}
+
+
+.articles article h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1.6rem;
+    color: black;
+    transition: color 0.3s ease-out;
+}
+  
+  
+.articles article img {
+    max-width: 100%;
+    transform-origin: center;
+    transition: transform 0.5s ease-in-out;
+}
+  
+.article-preview {
+    padding: 1.5rem;
+    background: white;
+}
+
+.articles figure {
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+    background-color: #fff;
+}
+
+.articles figure img {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+}
+.articles article:hover img {
+    transform: scale(1.1); 
+}
+
+
+        </style>
+
+
+  </main>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('show');
+    });
+  </script>
+  <footer class="footer">
+  <p>&copy; 2025 Jorge Emanuel Kek | Todos los derechos reservados.</p>
+</footer>
+</body>
+</html>
